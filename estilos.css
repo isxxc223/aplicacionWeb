@@ -1,0 +1,113 @@
+/* Reset básico para que los bordes y paddings no alteren el ancho */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+/* ===================================================
+   1. ESTILOS LAPTOP / PANTALLA COMPLETA (100%)
+   =================================================== */
+
+/* Header */
+.header {
+    background-color: #1a365d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+/* Sección de 2 bloques (50% / 50%) */
+.seccion-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.bloque {
+    background-color: #2b6cb0;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Sección de 3 cajas en fila */
+.seccion-tres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Sección de 4 cajas en fila */
+.seccion-cuatro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Estilo de las tarjetas rojas */
+.caja-roja {
+    border: 2px solid #e53e3e;
+    background-color: #fff5f5;
+    color: #c53030;
+    padding: 30px 10px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background-color: #1a365d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* ===================================================
+   2. MEDIA QUERY PARA TABLET (Aproximadamente 60%)
+   =================================================== */
+@media (max-width: 900px) {
+    /* Las 3 cajas pasan a apilarse en 1 sola columna */
+    .seccion-tres {
+        grid-template-columns: 1fr;
+    }
+
+    /* Las 4 cajas se reordenan en una cuadrícula de 2x2 */
+    .seccion-cuatro {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===================================================
+   3. MEDIA QUERY PARA CELULAR (Aproximadamente 30%)
+   =================================================== */
+@media (max-width: 600px) {
+    /* Los 2 bloques superiores se apilan */
+    .seccion-doble {
+        grid-template-columns: 1fr;
+    }
+
+    /* Las 3 cajas continúan apiladas */
+    .seccion-tres {
+        grid-template-columns: 1fr;
+    }
+
+    /* Las 4 cajas pasan a apilarse en 1 sola columna */
+    .seccion-cuatro {
+        grid-template-columns: 1fr;
+    }
+}
